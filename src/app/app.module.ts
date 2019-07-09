@@ -19,7 +19,9 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BookingRecordsComponent } from './booking-records/booking-records.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { BookingRecordsComponent } from './booking-records/booking-records.compo
     BookingRecordsComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+  	AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
